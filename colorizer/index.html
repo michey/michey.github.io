@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Scrolling Nav - Start Bootstrap Template</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand page-scroll" href="#page-top">Top</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+        <li class="hidden">
+          <a class="page-scroll" href="#page-top"></a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#rgb">RGB</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#hsv">HSV</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+
+<!-- Intro Section -->
+<section id="intro" class="intro-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Colorizer</h1>
+
+        <p><strong>Simple</strong> example of using meta tag in Chrome with
+          version greater than 39 on Android 5.0</p>
+        <a class="btn btn-default page-scroll" href="#rgb">RGB</a>
+        <a class="btn btn-default page-scroll" href="#hsv">HSV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="rgb" class="about-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>RGB</h1>
+
+        <p>Here example of using <code>colorizer.setColorRGB();</code></p>
+
+        <div class="input-group r-group">
+          <span class="input-group-addon">R</span>
+          <input type="text" name="r-element" class="form-control" placeholder="0-255">
+        </div>
+        <br>
+
+        <div class="input-group g-group">
+          <span class="input-group-addon">G</span>
+          <input type="text" name="g-element" class="form-control" placeholder="0-255">
+        </div>
+        <br>
+
+        <div class="input-group b-group">
+          <span class="input-group-addon">B</span>
+          <input type="text" name="b-element" class="form-control" placeholder="0-255">
+        </div>
+        <br>
+        <button type="button" class="btn btn-info" id="rgb-apply">Apply</button>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="hsv" class="services-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>HSV</h1>
+
+        <p>Here example of using <code>colorizer.setColorHSV();</code></p>
+
+        <div class="input-group h-group">
+          <span class="input-group-addon">H</span>
+          <input type="text" name="h-element" class="form-control" placeholder="0-360">
+        </div>
+        <br>
+
+        <div class="input-group s-group">
+          <span class="input-group-addon">S</span>
+          <input type="text" name="s-element" class="form-control" placeholder="0-100">
+        </div>
+        <br>
+
+        <div class="input-group v-group">
+          <span class="input-group-addon">V</span>
+          <input type="text" name="v-element" class="form-control" placeholder="0-100">
+        </div>
+        <br>
+        <button type="button" class="btn btn-warning" id="hsv-apply">Apply
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Scrolling Nav JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+
+<script>
+  (function() {
+
+    function module() {
+
+      var getMeta = function() {
+        var metaList = document.getElementsByName('theme-color');
+        return metaList[0];
+      };
+
+      var createMeta = function(color) {
+        var meta = document.createElement('meta');
+        meta.name = 'theme-color';
+        meta.content = color;
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      };
+
+      var changeColor = function(color) {
+        var meta = getMeta();
+        if (meta) {
+          meta.content = color;
+        } else {
+          createMeta(color);
+        }
+      };
+
+
+      var setColorRGB = function(r, g, b) {
+        function hexFilter(number) {
+          return number >= 0 && number <= 255;
+        }
+
+        function componentToHex(c) {
+          if (typeof c === 'string') {
+            c = parseInt(c);
+          }
+          var hex = c.toString(16);
+          return hex.length == 1 ? "0" + hex : hex;
+        }
+
+        if (hexFilter(r) && hexFilter(g) && hexFilter(b)) {
+          var hex = '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
+          console.log(hex);
+          changeColor(hex);
+        }
+      };
+
+      var setColorHSV = function(h, s, v) {
+
+        function setter(r, g, b) {
+          setColorRGB(Math.round(r * 255), Math.round(g * 255),
+              Math.round(b * 255));
+        }
+
+        var r, g, b;
+        var i;
+        var f, p, q, t;
+        h = Math.max(0, Math.min(360, h));
+        s = Math.max(0, Math.min(100, s)) / 100;
+        v = Math.max(0, Math.min(100, v)) / 100;
+
+        if (s == 0) {
+          r = g = b = v;
+          setter(r, g, b);
+          return undefined;
+        }
+        h /= 60;
+        i = Math.floor(h);
+        f = h - i;
+        p = v * (1 - s);
+        q = v * (1 - s * f);
+        t = v * (1 - s * (1 - f));
+        switch (i) {
+          case 0:
+            setter(v, t, p);
+            return undefined;
+          case 1:
+            setter(q, v, p);
+            return undefined;
+          case 2:
+            setter(p, v, t);
+            return undefined;
+          case 3:
+            setter(p, q, v);
+            return undefined;
+          case 4:
+            setter(t, p, v);
+            return undefined;
+          default:
+            setter(v, p, q);
+        }
+        return undefined;
+
+      };
+
+      return {
+        'setColorRGB': setColorRGB,
+        'setColorHSV': setColorHSV
+      };
+    }
+
+
+    window['colorizer'] = module();
+  })();
+
+</script>
+
+<script>
+  (function() {
+
+    function checkRGB(number) {
+      return number >= 0 && number <= 255;
+    }
+
+    function checkH(number) {
+      return number >= 0 && number <= 360;
+    }
+
+    function checkSV(number) {
+      return number >= 0 && number <= 100;
+    }
+
+
+    var rgbFlag = true;
+    var hsvFlag = true;
+
+    $('#rgb-apply').click(function() {
+      var r = $(".form-control[name='r-element']").val();
+      var g = $(".form-control[name='g-element']").val();
+      var b = $(".form-control[name='b-element']").val();
+
+
+      if (!checkRGB(r)) {
+        $('.r-group').addClass('has-error');
+        rgbFlag = false;
+      } else {
+        $('.r-group').removeClass('has-error');
+        rgbFlag = true;
+      }
+      if (!checkRGB(g)) {
+        $('.g-group').addClass('has-error');
+        rgbFlag = false;
+      } else {
+        $('.g-group').removeClass('has-error');
+        rgbFlag = true;
+      }
+      if (!checkRGB(b)) {
+        $('.b-group').addClass('has-error');
+        rgbFlag = false;
+      } else {
+        $('.b-group').removeClass('has-error');
+        rgbFlag = true;
+      }
+      if (rgbFlag) {
+        colorizer.setColorRGB(r, g, b);
+      }
+
+    })
+
+    $('#hsv-apply').click(function() {
+      var h = $(".form-control[name='h-element']").val();
+      var s = $(".form-control[name='s-element']").val();
+      var v = $(".form-control[name='v-element']").val();
+
+
+      if (!checkH(h)) {
+        $('.h-group').addClass('has-error');
+        hsvFlag = false;
+      } else {
+        $('.h-group').removeClass('has-error');
+        hsvFlag = true;
+      }
+      if (!checkSV(s)) {
+        $('.s-group').addClass('has-error');
+        hsvFlag = false;
+      } else {
+        $('.s-group').removeClass('has-error');
+        hsvFlag = true;
+      }
+      if (!checkSV(v)) {
+        $('.v-group').addClass('has-error');
+        hsvFlag = false;
+      } else {
+        $('.v-group').removeClass('has-error');
+        hsvFlag = true;
+      }
+      if (hsvFlag) {
+        colorizer.setColorHSV(h, s, v);
+      }
+
+    })
+
+
+  })();
+
+</script>
+
+</body>
+
+</html>
