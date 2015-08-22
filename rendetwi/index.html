@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="rendetwi/custom.css"/>
+  <meta charset="UTF-8">
+  <title>Rendetwi</title>
+  <script src="../libs/vendor/react/react.js"></script>
+  <script src="../libs/vendor/react/JSXTransformer.js"></script>
+  <link rel="stylesheet" href="../libs/vendor/mdl/material.css">
+  <link rel="stylesheet" href="./custom.css"/>
+  <script src="../libs/vendor/mdl/material.js"></script>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="./app.js"></script>
+</head>
+<body>
+
+<style>
+  .renderer-card {
+    width: 550px;
+  }
+
+  .renderer-card > .mdl-card__title {
+    color: #fff;
+    height:120px;
+    background-color: orangered;
+  }
+
+  #renderer-port {
+    width: 500px;
+    height: 350px;
+    margin: 5px;
+  }
+
+</style>
+
+<div class="mount-point">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Renderer</span>
+
+        <div class="mdl-layout-spacer"></div>
+
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--8-col">
+          <div class="renderer-card mdl-card mdl-shadow--6dp">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">
+                Here be your twi!
+              </h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+              <canvas id="renderer-port">
+
+              </canvas>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1" />
+                <label class="mdl-textfield__label" for="sample1">Link...</label>
+              </div>
+            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Create image</button>
+            </div>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+      </div>
+    </main>
+
+  </div>
+
+</div>
+
+</body>
+</html>
