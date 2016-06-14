@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="my-awesome-blog" property="og:site_name">
 
-  <meta content="Slick и проблема Tuple22" property="og:title">
+  <meta content="Slick and Tuple22 limitation" property="og:title">
 
 
   <meta content="article" property="og:type">
@@ -16,10 +16,10 @@
   <meta content=" <h3>Hello</h3> Here will be my awesome blog with some posts about programming. <br> At first all posts will be writtenin in Russian languane and then rewrited in English. <br> Здесь будет мой замечательный блог с постами про программирование. <br> Сначала посты будут выходить на русском, потом переводиться на английский" property="og:description">
 
 
-  <meta content="https://michey.github.io/dev/2016/06/14/slick22-ru.html" property="og:url">
+  <meta content="https://michey.github.io/dev/2016/06/14/slick22-en.html" property="og:url">
 
 
-  <meta content="2016-06-14T20:00:00+03:00" property="article:published_time">
+  <meta content="2016-06-14T21:00:00+03:00" property="article:published_time">
   <meta content="https://michey.github.io/about/" property="article:author">
 
 
@@ -38,11 +38,11 @@
   
   <meta content="shapeless" property="article:tag">
   
-  <meta content="ru" property="article:tag">
+  <meta content="en" property="article:tag">
   
 
-  <title>Slick и проблема Tuple22</title>
-  <meta name="description" content="Синопсис:Иногда при хранении в одной таблице сущностей с общим наследником количество полей начинает расти и превышает 22 поля.При таком условии ломаеться пр...">
+  <title>Slick and Tuple22 limitation</title>
+  <meta name="description" content="Synopsis:Sometimes, when you implementing single table inheritance you could stuck with scala Tuple22 limitation.When number of columns is greater than 22 yo...">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/css/main.css">
@@ -61,7 +61,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-hQpvDQiCJaD2H465dQfA717v7lu5qHWtDbWNPvaTJ0ID5xnPUlVXnKzq7b8YUkbN" crossorigin="anonymous">
-  <link rel="canonical" href="https://michey.github.io/dev/2016/06/14/slick22-ru.html">
+  <link rel="canonical" href="https://michey.github.io/dev/2016/06/14/slick22-en.html">
   <link rel="alternate" type="application/rss+xml" title="my-awesome-blog" href="https://michey.github.io/feed.xml">
 </head>
 
@@ -119,8 +119,8 @@
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="jumbotron">
     <div class="container">
-      <h1 class="post-title-main" itemprop="name headline">Slick и проблема Tuple22</h1>
-      <p class="post-meta"><time datetime="2016-06-14T20:00:00+03:00" itemprop="datePublished">Jun 14, 2016</time></p>
+      <h1 class="post-title-main" itemprop="name headline">Slick and Tuple22 limitation</h1>
+      <p class="post-meta"><time datetime="2016-06-14T21:00:00+03:00" itemprop="datePublished">Jun 14, 2016</time></p>
       
     </div>
 
@@ -128,28 +128,27 @@
 
 
   <div class="post-content container" itemprop="articleBody">
-    <h3 id="section">Синопсис:</h3>
-<p>Иногда при хранении в одной таблице сущностей с общим наследником количество полей начинает расти и превышает 22 поля.
-При таком условии ломаеться простой и удобный маппинг между кейс-классом и строкой в поле.
-Ограничение вызвано тем, что конструктор Tuple имеет максимальную арность 22.
-Ограничение можно обойти если описать несколько схем для получения данных из одной таблицы,
-это решение также имеет ограничения - для n типов сущностей понадобиться n запросов.
-На мой взгляд самым простым решением является применение shapeless и slickless.</p>
+    <h3 id="synopsis">Synopsis:</h3>
+<p>Sometimes, when you implementing single table inheritance you could stuck with scala Tuple22 limitation.
+When number of columns is greater than 22 you lost easy to use two way binding between row and case class.
+You could try to pass through this limitation by writing more than one slick schema to access the rows, 
+but it will increase the number of queries to DB.
+I think the easiest way to fix this problem - use shapeless with slickless.</p>
 
-<p>Все исходники целиком можно посмотреть в <a href="https://github.com/michey/slick-22">slick-22</a></p>
+<p>Full source code available at <a href="https://github.com/michey/slick-22">slick-22</a></p>
 
-<h3 id="section-1">Решение:</h3>
-<p>Само решение предельно простое:</p>
+<h3 id="solution">Solution:</h3>
+<p>Solution is extremely easy.</p>
 
 <ol>
-  <li>описываем кейс-класс</li>
-  <li>описываем схему с применением гетерогенного листа из shapeless.</li>
-  <li>делаем конвертацию из гетерогенного листа в кейс-класс при помощи shapeless Generic.</li>
+  <li>Write case class</li>
+  <li>Write your schema with heterogeneous list from shapeless lib.</li>
+  <li>Convert heterogeneous list to case class with help of shapeless Generic.</li>
 </ol>
 
-<h3 id="section-2">Более подробно:</h3>
+<h3 id="much-details">Much details:</h3>
 
-<p>Добавляем в зависимости актуальную версию shapeless и slickless (на момент написания поста)</p>
+<p>Add shapeless and slickless to dependencies.</p>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -162,7 +161,7 @@
  <span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Описываем кейс-класс</p>
+<p>Write case class</p>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -173,7 +172,7 @@
                   <span class="n">f23</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Далее описываем схему используя гетерогенный лист.</p>
+<p>Write schema with heterogeneous list.</p>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -222,7 +221,7 @@
 <span class="o">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>При выполнении запросов к бд не забываем приводить наш кейскласс к гетерогенному листу и наоборот</p>
+<p>Don’t forget to use shapeless Generic.</p>
 
 <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
