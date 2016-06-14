@@ -108,6 +108,37 @@ code {
 .intro {
   font-size: 19px; }
 
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0; }
+  .tags li {
+    float: left; }
+
+.tag {
+  background: #6c71c4;
+  border-radius: 3px;
+  color: #fdf6e3;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 10px 0 20px;
+  position: relative;
+  margin: 0 10px 10px 0; }
+  .tag:hover {
+    color: #eee8d5 !important; }
+  .tag::before {
+    background: #fff;
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    height: 6px;
+    left: 10px;
+    width: 6px;
+    top: 10px; }
+
 .manual-title {
   font-size: 21px;
   padding: 1em;
