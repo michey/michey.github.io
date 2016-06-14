@@ -116,6 +116,9 @@ code {
   .tags li {
     float: left; }
 
+.tag-container {
+  display: inline-block; }
+
 .tag {
   background: #6c71c4;
   border-radius: 3px;
