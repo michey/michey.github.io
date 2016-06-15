@@ -68,6 +68,7 @@ a:hover {
   padding-bottom: 0.3em; }
 
 .post-title-main {
+  padding-top: 50px;
   text-align: center;
   color: #cb4b16 !important; }
 
@@ -108,6 +109,9 @@ code {
 .intro {
   font-size: 19px; }
 
+.tags-stuff {
+  margin-bottom: 100px; }
+
 .tags {
   list-style: none;
   margin: 0;
@@ -118,6 +122,9 @@ code {
 
 .tag-container {
   display: inline-block; }
+
+.container h3 {
+  padding-top: 30px; }
 
 .tag {
   background: #6c71c4;
