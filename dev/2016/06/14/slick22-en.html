@@ -146,32 +146,38 @@
 </section>
 
 <section>
-    <article class="post" itemscope itemtype="http://schema.org/Article">
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="post-title-main" itemprop="name headline">Slick and Tuple22 limitation</h1>
-      <p class="post-meta">
-          <time datetime="2016-06-14T21:00:00+03:00" content="2016-06-14T21:00:00+03:00" itemprop="datePublished">Jun 14, 2016</time>
-           • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name" >Alexander Mihailov</span></span></p>
-        <ul class="tags"  itemprop="articleSection">
-            
-            <li><a href="/tags#slick" class="tag">slick</a></li>
-            
-            <li><a href="/tags#scala" class="tag">scala</a></li>
-            
-            <li><a href="/tags#shapeless" class="tag">shapeless</a></li>
-            
-            <li><a href="/tags#en" class="tag">en</a></li>
-            
-        </ul>
+    <article class="post" itemscope itemtype="http://schema.org/Blog">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="post-title-main" itemprop="name headline">Slick and Tuple22 limitation</h1>
+            <p class="post-meta">
+                <time datetime="2016-06-14T21:00:00+03:00" content="2016-06-14T21:00:00+03:00"
+                      itemprop="datePublished">Jun 14, 2016
+                </time>
+                
+                • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">Alexander Mihailov</span>
+                  </span>
+                
+            </p>
+            <ul class="tags" itemprop="articleSection">
+                
+                <li><a href="/tags#slick" class="tag">slick</a></li>
+                
+                <li><a href="/tags#scala" class="tag">scala</a></li>
+                
+                <li><a href="/tags#shapeless" class="tag">shapeless</a></li>
+                
+                <li><a href="/tags#en" class="tag">en</a></li>
+                
+            </ul>
+
+        </div>
 
     </div>
 
-</div>
-
-  <div class="post-content container" itemprop="articleBody">
-    <h3 id="synopsis">Synopsis:</h3>
+    <div class="post-content container" itemprop="articleBody">
+        <h3 id="synopsis">Synopsis:</h3>
 <p>Sometimes, when you implementing single table inheritance you could stuck with scala Tuple22 limitation.
 When number of columns is greater than 22 you lost easy to use two way binding between row and case class.
 You could try to pass through this limitation by writing more than one slick schema to access the rows, 
@@ -304,7 +310,7 @@ I think the easiest way to fix this problem - use shapeless with slickless.</p>
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
 
-  </div>
+    </div>
 
 </article>
 

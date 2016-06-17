@@ -146,32 +146,38 @@
 </section>
 
 <section>
-    <article class="post" itemscope itemtype="http://schema.org/Article">
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="post-title-main" itemprop="name headline">Slick и проблема Tuple22</h1>
-      <p class="post-meta">
-          <time datetime="2016-06-14T20:00:00+03:00" content="2016-06-14T20:00:00+03:00" itemprop="datePublished">Jun 14, 2016</time>
-           • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name" >Alexander Mihailov</span></span></p>
-        <ul class="tags"  itemprop="articleSection">
-            
-            <li><a href="/tags#slick" class="tag">slick</a></li>
-            
-            <li><a href="/tags#scala" class="tag">scala</a></li>
-            
-            <li><a href="/tags#shapeless" class="tag">shapeless</a></li>
-            
-            <li><a href="/tags#ru" class="tag">ru</a></li>
-            
-        </ul>
+    <article class="post" itemscope itemtype="http://schema.org/Blog">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="post-title-main" itemprop="name headline">Slick и проблема Tuple22</h1>
+            <p class="post-meta">
+                <time datetime="2016-06-14T20:00:00+03:00" content="2016-06-14T20:00:00+03:00"
+                      itemprop="datePublished">Jun 14, 2016
+                </time>
+                
+                • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">Alexander Mihailov</span>
+                  </span>
+                
+            </p>
+            <ul class="tags" itemprop="articleSection">
+                
+                <li><a href="/tags#slick" class="tag">slick</a></li>
+                
+                <li><a href="/tags#scala" class="tag">scala</a></li>
+                
+                <li><a href="/tags#shapeless" class="tag">shapeless</a></li>
+                
+                <li><a href="/tags#ru" class="tag">ru</a></li>
+                
+            </ul>
+
+        </div>
 
     </div>
 
-</div>
-
-  <div class="post-content container" itemprop="articleBody">
-    <h3 id="section">Синопсис:</h3>
+    <div class="post-content container" itemprop="articleBody">
+        <h3 id="section">Синопсис:</h3>
 <p>Иногда при хранении в одной таблице сущностей с общим наследником количество полей начинает расти и превышает 22 поля.
 При таком условии ломаеться простой и удобный маппинг между кейс-классом и строкой в поле.
 Ограничение вызвано тем, что конструктор Tuple имеет максимальную арность 22.
@@ -305,7 +311,7 @@
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
 
-  </div>
+    </div>
 
 </article>
 
