@@ -77,6 +77,8 @@ a:hover {
   color: #657b83 !important;
   text-align: justify;
   padding-bottom: 5em; }
+  .post-content p {
+    text-indent: 2em; }
 
 .posted {
   color: #93a1a1 !important; }
