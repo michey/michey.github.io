@@ -5,9 +5,47 @@
     <description> &lt;h3&gt;Hello&lt;/h3&gt; Here will be my awesome blog with some posts about programming. &lt;br&gt; At first all posts will be writtenin in Russian languane and then rewrited in English. &lt;br&gt; Здесь будет мой замечательный блог с постами про программирование. &lt;br&gt; Сначала посты будут выходить на русском, потом переводиться на английский</description>
     <link>https://michey.github.io/</link>
     <atom:link href="https://michey.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Jun 2016 19:34:33 +0300</pubDate>
-    <lastBuildDate>Fri, 17 Jun 2016 19:34:33 +0300</lastBuildDate>
+    <pubDate>Mon, 20 Jun 2016 15:24:19 +0300</pubDate>
+    <lastBuildDate>Mon, 20 Jun 2016 15:24:19 +0300</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Scrooge, SBT, IntellijIDEA</title>
+        <description>&lt;p&gt;Well, I think everybody knows pros of using Thrift.
+Right now, in Scala, we have one nice Thrift IDL compiler - Scrooge.&lt;/p&gt;
+
+&lt;p&gt;When you use default settings of Scrooge it stores generated code in “target/scala-2.11/src_manage”.
+Which disadvantages of using this path? 
+Well, when you store service and interface in different subprojects you couldn’t use .dependsOn() project method.
+Technically you could use it, but IntellijIDEA will ignore it. Generated code wouldn’t be added to classpath and code completion.&lt;/p&gt;
+
+&lt;p&gt;With some easy configuration hacks, you could make it work.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;    &lt;span class=&quot;n&quot;&gt;scroogeThriftOutputFolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Compile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baseDirectory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;src_gen&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;managedSourceDirectories&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Compile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;baseDirectory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;src_gen&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Full code in &lt;a href=&quot;https://github.com/michey/scrooge-intellijidea&quot;&gt;repo&lt;/a&gt; .&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Jun 2016 10:00:00 +0300</pubDate>
+        <link>https://michey.github.io/dev/2016/06/20/scrooge-intellijidea-en.html</link>
+        <guid isPermaLink="true">https://michey.github.io/dev/2016/06/20/scrooge-intellijidea-en.html</guid>
+        
+        <category>scala</category>
+        
+        <category>scrooge</category>
+        
+        <category>thrift</category>
+        
+        <category>SBT</category>
+        
+        <category>en</category>
+        
+        
+        <category>dev</category>
+        
+      </item>
     
       <item>
         <title>Scrooge, SBT, IntellijIDEA</title>
