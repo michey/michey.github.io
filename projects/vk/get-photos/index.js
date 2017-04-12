@@ -1,17 +1,29 @@
 var albums = [];
 var photos = {};
 
-var loadAlbumsList = function () {
+var concatLinks = function (links) {
+  return links.map(function (link, i) {
+    return "<a href='" + link + "' target='_blank' download=''>Photo#" + i + "</a>"
+  }).join("<br>");
+};
 
+var addLinksToView = function (view, links) {
+  linksAsString = "<p>" + concatLinks(links) + "</p>";
+  view.append(linksAsString);
+};
+
+var loadAlbumsList = function () {
   VK.api("photos.getAlbums", function (data) {
-    console.log(albums);
     albums = data["response"]["items"];
     loadPhotos();
   })
 };
 
-
 var photoListingComplete = function () {
+  var view = $(".raised");
+  Object.keys(photos).forEach(function(key) {
+    addLinksToView(view, photos[key]);
+  });
   console.log(photos);
 };
 
@@ -36,7 +48,6 @@ var loadPhotos = function () {
   albums.forEach(function (album) {
     var id = album["id"];
     getPhoto(id);
-    console.log(album)
   })
 };
 
