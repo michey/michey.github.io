@@ -1,16 +1,9 @@
 
-var id = 0;
 var albums = [];
 
-var getId = function() {
-  VK.api("users.get", function (data) {
-    id = data["response"][0]["id"];
-    loadAlbumsList();
-  })
-};
-
 var loadAlbumsList = function () {
-  VK.api("photos.getAlbums", {"owner_id": id}, function (data) {
+
+  VK.api("photos.getAlbums", function (data) {
     console.log(albums);
     albums = data["response"];
     loadPhotos();
@@ -24,7 +17,7 @@ var loadPhotos = function () {
 };
 
 var success = function () {
-  getId();
+  loadAlbumsList();
 };
 
 var error = function () {
