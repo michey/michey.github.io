@@ -11,6 +11,7 @@ var getId = function() {
 
 var loadAlbumsList = function () {
   VK.api("photos.getAlbums", {"owner_id": id}, function (data) {
+    console.log(albums);
     albums = data["response"];
     loadPhotos();
   })
