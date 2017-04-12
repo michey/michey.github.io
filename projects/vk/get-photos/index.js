@@ -7,8 +7,8 @@ var concatLinks = function (links) {
   }).join("<br>");
 };
 
-var addLinksToView = function (view, links) {
-  linksAsString = "<p>" + concatLinks(links) + "</p>";
+var addLinksToView = function (view, title, links) {
+  linksAsString = "<p>" + title + "<br>" + concatLinks(links) + "</p>";
   view.append(linksAsString);
 };
 
@@ -21,15 +21,15 @@ var loadAlbumsList = function () {
 
 var photoListingComplete = function () {
   var view = $(".raised");
-  Object.keys(photos).forEach(function(key) {
-    addLinksToView(view, photos[key]);
+  Object.keys(photos).forEach(function (key) {
+    addLinksToView(view, key, photos[key]);
   });
   console.log(photos);
 };
 
-var handleResponse = function (data, albumId) {
+var handleResponse = function (data, title) {
   var items = data["response"]["items"];
-  photos[albumId] = items.map(function (ph) {
+  photos[title] = items.map(function (ph) {
     return ph["photo_2560"];
   });
   if (Object.keys(photos).length === albums.length) {
@@ -38,16 +38,17 @@ var handleResponse = function (data, albumId) {
 
 };
 
-var getPhoto = function (albumId) {
+var getPhoto = function (albumId, title) {
   VK.api("photos.get", {"album_id": albumId}, function (data) {
-    handleResponse(data, albumId);
+    handleResponse(data, title);
   })
 };
 
 var loadPhotos = function () {
   albums.forEach(function (album) {
     var id = album["id"];
-    getPhoto(id);
+    var title = album["title"];
+    getPhoto(id, title);
   })
 };
 
