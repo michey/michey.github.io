@@ -48,6 +48,7 @@ var handleResponse = function (data, title) {
       photoListingComplete();
     }
   } else {
+    photos[title] = [];
     console.log(data);
   }
 };
@@ -64,7 +65,7 @@ var loadPhotos = function () {
     var title = album["title"];
     setTimeout(function() {
       getPhoto(id, title);
-    }, 300 * idx)
+    }, 500 * idx)
   })
 };
 
