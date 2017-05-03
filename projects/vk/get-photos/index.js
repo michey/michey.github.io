@@ -48,10 +48,12 @@ var getPhoto = function (albumId, title) {
 };
 
 var loadPhotos = function () {
-  albums.forEach(function (album) {
+  albums.forEach(function (album, idx) {
     var id = album["id"];
     var title = album["title"];
-    getPhoto(id, title);
+    setTimeout(function() {
+      getPhoto(id, title);
+    }, 300 * idx)
   })
 };
 
