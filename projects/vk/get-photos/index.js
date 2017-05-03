@@ -40,7 +40,9 @@ var handleResponse = function (data, title) {
         }
       }).filter(function(item) {
         return item !== undefined;
-      }).sort();
+      }).sort(function(a, b) {
+        return a - b;
+      });
       console.log("keys" + keys);
       var actualKey = "photo_" + keys[keys.length - 1];
       console.log("actualKey" + actualKey);
