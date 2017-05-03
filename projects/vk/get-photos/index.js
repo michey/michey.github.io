@@ -28,14 +28,17 @@ var photoListingComplete = function () {
 };
 
 var handleResponse = function (data, title) {
-  var items = data["response"]["items"];
-  photos[title] = items.map(function (ph) {
-    return ph["photo_2560"];
-  });
-  if (Object.keys(photos).length === albums.length) {
-    photoListingComplete();
+  if (data && data["response"] && data["response"] ) {
+    var items = data["response"]["items"];
+    photos[title] = items.map(function (ph) {
+      return ph["photo_2560"];
+    });
+    if (Object.keys(photos).length === albums.length) {
+      photoListingComplete();
+    }
+  } else {
+    console.log(data);
   }
-
 };
 
 var getPhoto = function (albumId, title) {
