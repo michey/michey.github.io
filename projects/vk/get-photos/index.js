@@ -3,7 +3,7 @@ var photos = {};
 
 var concatLinks = function (links) {
   return links.map(function (link, i) {
-    return "<a href='" + link + "' download='Photo" + i + ".jpg' type="image/jpeg">Photo#" + i + "</a>"
+    return "<a href='" + link + "' download='Photo" + i + ".jpg' type='image/jpeg'>Photo#" + i + "</a>"
   }).join("<br>");
 };
 
