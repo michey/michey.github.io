@@ -31,7 +31,18 @@ var handleResponse = function (data, title) {
   if (data && data["response"] && data["response"] ) {
     var items = data["response"]["items"];
     photos[title] = items.map(function (ph) {
-      return ph["photo_2560"];
+      var keys = Object.keys(ph).map(function (key) {
+        if(key.indexOf("photo_") !== -1 ) {
+          var parts = key.split("photo_");
+          return parts[1];
+        } else {
+        return undefined;
+        }
+      }).filter(function(item) {
+        return item !== undefined';
+      }).sort();
+      return keys[keys.length - 1];
+      
     });
     if (Object.keys(photos).length === albums.length) {
       photoListingComplete();
