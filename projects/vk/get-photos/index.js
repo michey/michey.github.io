@@ -41,7 +41,10 @@ var handleResponse = function (data, title) {
       }).filter(function(item) {
         return item !== undefined;
       }).sort();
-      return keys[keys.length - 1];
+      console.log("keys" + keys);
+      var actualKey = "photo_" + keys[keys.length - 1];
+      console.log("actualKey" + actualKey);
+      return ph[actualKey];
       
     });
     if (Object.keys(photos).length === albums.length) {
