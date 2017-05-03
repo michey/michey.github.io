@@ -39,7 +39,7 @@ var handleResponse = function (data, title) {
         return undefined;
         }
       }).filter(function(item) {
-        return item !== undefined';
+        return item !== undefined;
       }).sort();
       return keys[keys.length - 1];
       
