@@ -8,12 +8,19 @@
   </url>
   
   <url>
-    <loc>https://michey.github.io/blog/first/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
+    <loc>https://michey.github.io/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://michey.github.io/categories/about/</loc>
+    <loc>https://michey.github.io/categories/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michey.github.io/tags/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -25,7 +32,7 @@
   </url>
   
   <url>
-    <loc>https://michey.github.io/</loc>
+    <loc>https://michey.github.io/categories/about/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -37,20 +44,13 @@
   </url>
   
   <url>
-    <loc>https://michey.github.io/categories/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
+    <loc>https://michey.github.io/blog/first/</loc>
+    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://michey.github.io/categories/holder/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://michey.github.io/tags/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
