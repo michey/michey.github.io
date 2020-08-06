@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Alex M</title>
-    <link>https://michey.github.io/categories/</link>
+    <link>https://fidonode.me/categories/</link>
     <description>Recent content in Categories on Alex M</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
     
-	<atom:link href="https://michey.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fidonode.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>about</title>
-      <link>https://michey.github.io/categories/about/</link>
+      <link>https://fidonode.me/categories/about/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
       
-      <guid>https://michey.github.io/categories/about/</guid>
+      <guid>https://fidonode.me/categories/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>holder</title>
-      <link>https://michey.github.io/categories/holder/</link>
+      <link>https://fidonode.me/categories/holder/</link>
       <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
       
-      <guid>https://michey.github.io/categories/holder/</guid>
+      <guid>https://fidonode.me/categories/holder/</guid>
       <description></description>
     </item>
     

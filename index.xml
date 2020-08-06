@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alex M</title>
-    <link>https://michey.github.io/</link>
+    <link>https://fidonode.me/</link>
     <description>Recent content on Alex M</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
     
-	<atom:link href="https://michey.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fidonode.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://michey.github.io/about/</link>
+      <link>https://fidonode.me/about/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
       
-      <guid>https://michey.github.io/about/</guid>
+      <guid>https://fidonode.me/about/</guid>
       <description>Nothing to show now.</description>
     </item>
     
     <item>
       <title>Nothing published yet</title>
-      <link>https://michey.github.io/blog/first/</link>
+      <link>https://fidonode.me/blog/first/</link>
       <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
       
-      <guid>https://michey.github.io/blog/first/</guid>
+      <guid>https://fidonode.me/blog/first/</guid>
       <description>Nothing published yet</description>
     </item>
     
